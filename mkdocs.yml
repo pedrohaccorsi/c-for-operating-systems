@@ -1,0 +1,79 @@
+site_name: C for Operating Systems
+
+
+# Site tree
+nav:
+  - Home: index.md
+  - Processes: processes/readme.md
+  - System calls: 
+      - 01. Fork: sys-calls/01-fork/readme.md 
+      - 02. Exit: sys-calls/02-exit/readme.md 
+      - 03. Wait: sys-calls/03-wait/readme.md 
+      - 04. Exec: sys-calls/04-exec/readme.md  
+  - Signals: signals/readme.md
+  
+repo_url: https://github.com/pedrohaccorsi/c-for-operating-systems
+repo_name: c-for-operating-systems
+# Configuration
+
+extra_css:
+  - stylesheets/custom-colors.css
+
+theme:
+  name: material
+  custom_dir: custom-assets
+  favicon: c.svg
+  icon:
+    logo: c
+    repo: fontawesome/brands/github
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    - tabs
+    - instant
+    - navigation.instant
+    - navigation.tabs
+    - search.highlight
+  plugins:
+    - search    
+  palette: 
+    scheme: preference
+    # primary: yellow
+    # accent: indigo
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pedrohaccorsi/c-for-operating-systems      
+
+markdown_extensions:
+    - md_in_html
+    - toc:
+        permalink: true
+    - admonition
+    - codehilite
+    - def_list
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.tabbed
+    - pymdownx.highlight
+    - pymdownx.inlinehilite
+    - pymdownx.keys
+    - pymdownx.superfences
+    - pymdownx.mark 
+    - pymdownx.smartsymbols
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    - toc:
+        permalink: "#"
+    - pymdownx.emoji:
+        emoji_index: !!python/name:materialx.emoji.twemoji
+        emoji_generator: !!python/name:materialx.emoji.to_svg
+        options:
+          custom_icons:
+            - assets/.icons
