@@ -492,19 +492,27 @@
 <p>Notice that all data related to the original program is completely lost.</p>
 </blockquote>
 <p>In code:</p>
-<p><div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="kt">char</span> <span class="o">*</span><span class="n">binaryPath</span> <span class="o">=</span> <span class="s">&quot;/bin/ls&quot;</span><span class="p">;</span>
   <span class="kt">char</span> <span class="o">*</span><span class="n">arg1</span> <span class="o">=</span> <span class="s">&quot;-lh&quot;</span><span class="p">;</span>
-  <span class="kt">char</span> <span class="o">*</span><span class="n">arg2</span> <span class="o">=</span> <span class="s">&quot;/home&quot;</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">arg2</span> <span class="o">=</span> <span class="s">&quot;/home/pedro/Desktop/superprof/guilherme&quot;</span><span class="p">;</span>
 
   <span class="n">execl</span><span class="p">(</span><span class="n">binaryPath</span><span class="p">,</span> <span class="n">binaryPath</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-If everything runs smoothly, the system should completely change the current process by the binaryPath sent to <code>execl()</code>. In other words, the <code>return 0</code> statement would never be reached.</p>
+
+<p>Running this, we get:</p>
+<div class="highlight"><pre><span></span><code>pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/exec$ gcc ex01.c -o ex01
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/exec$ ./ex01
+total 12K
+drwxrwxr-x 2 pedro pedro 4,0K mar 24 23:37 aula-00
+drwxrwxr-x 5 pedro pedro 4,0K mar 26 14:38 aula-01
+drwxrwxr-x 3 pedro pedro 4,0K mar 26 14:31 aula-02
+</code></pre></div>
                 
               
               

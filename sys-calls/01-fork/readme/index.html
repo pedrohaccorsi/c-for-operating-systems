@@ -481,7 +481,10 @@
                 
                   <h1>01. Fork</h1>
                 
-                <p>In traditional Unix the only way to create a process is using the  <code>fork()</code> system call. The new process gets a copy of the current program, but new process id (<code>pid</code>). The process id of the parent process (the process that called  <code>fork()</code>) is registered as the new processes parent <code>pid</code> (ppid) to build a process tree.</p>
+                <div class="highlight"><pre><span></span><code>pid_t fork(void)
+</code></pre></div>
+
+<p>In traditional Unix the only way to create a process is using the  <code>fork()</code> system call. The new process gets a copy of the current program, but new process id (<code>pid</code>). The process id of the parent process (the process that called  <code>fork()</code>) is registered as the new processes parent <code>pid</code> (ppid) to build a process tree.</p>
 <p>In the parent process,  <code>fork()</code> returns and delivers the new processe's <code>pid</code> as a result.</p>
 <p>The new process also returns from the  <code>fork()</code> system call (because that is when the copy was made), but the result of the  <code>fork()</code> is 0.</p>
 <blockquote>
@@ -515,11 +518,10 @@
 </code></pre></div>
 
 <p>Running this, we get:</p>
-<div class="highlight"><pre><span></span><code>kris@linux:/tmp/kris&gt; make probe1
-cc     probe1.c   -o probe1
-kris@linux:/tmp/kris&gt; ./probe1
+<div class="highlight"><pre><span></span><code>pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/fork$ gcc ex01.c -o ex01
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/fork$ ./ex01
+I am the parent, the child is 3764.
 I am the child.
-I am the parent, the child is 16959.
 </code></pre></div>
 
 <p>We are defining a variable <code>pid</code> of the type pid_t. This variable saves the <code>fork()</code> result, and using it we activate one (“I am the child.”) or the other (“I am the parent”) branch of an if().</p>

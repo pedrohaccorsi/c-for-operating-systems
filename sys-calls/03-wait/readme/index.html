@@ -420,17 +420,19 @@
                 
                   <h1>03. Wait</h1>
                 
-                <p>Our child process ends with an <code>exit(0)</code>. The 0 is the exit status of our program and can be shipped. We need to make the parent process pick up this value and we need a new system call for this.</p>
+                <div class="highlight"><pre><span></span><code>pid_t wait(int *wstatus);
+</code></pre></div>
+
+<p>Our child process ends with an <code>exit(0)</code>. The 0 is the exit status of our program and can be shipped. We need to make the parent process pick up this value and we need a new system call for this.</p>
 <p>This system call is <code>wait()</code>.</p>
 <p>In Code:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
-
 <span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;sys/wait.h&gt;</span><span class="cp"></span>
 
-<span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
         <span class="kt">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="kt">int</span>   <span class="n">status</span><span class="p">;</span>
 
@@ -445,7 +447,7 @@
                 <span class="n">pid</span> <span class="o">=</span> <span class="n">wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">status</span><span class="p">);</span>
                 <span class="n">printf</span><span class="p">(</span><span class="s">&quot;End of process %d: &quot;</span><span class="p">,</span> <span class="n">pid</span><span class="p">);</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">WIFEXITED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span> <span class="p">{</span>
-                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The process ended with exit(%d).</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The process ended with return code(%d).</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>
                 <span class="p">}</span>
                 <span class="k">if</span> <span class="p">(</span><span class="n">WIFSIGNALED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span> <span class="p">{</span>
                         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;The process ended with kill -%d.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">WTERMSIG</span><span class="p">(</span><span class="n">status</span><span class="p">));</span>
@@ -455,18 +457,17 @@
                 <span class="n">perror</span><span class="p">(</span><span class="s">&quot;In fork():&quot;</span><span class="p">);</span>
         <span class="p">}</span>
 
-        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 
-<p>And the runtime protocol:</p>
-<div class="highlight"><pre><span></span><code>kris@linux:/tmp/kris&gt; make probe2
-cc     probe2.c   -o probe2
-kris@linux:/tmp/kris&gt; ./probe2
+<p>Running this, we get:</p>
+<div class="highlight"><pre><span></span><code>pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/wait$ gcc ex01.c -o ex01
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/wait$ ./ex01
+I am the parent, the child is 4064.
 I am the child.
-I am the parent, the child is 17399.
 I am the child, 10 seconds later.
-End of process 17399: The process ended with exit(0.
+End of process 4064: The process ended with return code (0).
 </code></pre></div>
 
 <p>The variable status is passed to the system call <code>wait()</code> as a reference parameter, and will be overwritten by it. The value is a bitfield, containing the exit status and additional reasons explaining how the program ended. To decode this, C offers a number of macros with predicates such as <code>WIFEXITED()</code> or <code>WIFSIGNALED()</code>. We also get extractors, such as <code>WEXITSTATUS()</code> and <code>WTERMSIG()</code>. <code>wait()</code> also returns the pid of the process that terminated, as a function result.</p>
