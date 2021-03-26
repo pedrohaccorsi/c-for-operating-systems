@@ -1,3 +1,8 @@
+
+```
+pid_t fork(void)
+```
+
 In traditional Unix the only way to create a process is using the  `fork()` system call. The new process gets a copy of the current program, but new process id (`pid`). The process id of the parent process (the process that called  `fork()`) is registered as the new processes parent `pid` (ppid) to build a process tree.
 
 In the parent process,  `fork()` returns and delivers the new processe's `pid` as a result.
@@ -39,11 +44,10 @@ int main() {
 Running this, we get:
 
 ```
-kris@linux:/tmp/kris> make probe1
-cc     probe1.c   -o probe1
-kris@linux:/tmp/kris> ./probe1
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/fork$ gcc ex01.c -o ex01
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/fork$ ./ex01
+I am the parent, the child is 3764.
 I am the child.
-I am the parent, the child is 16959.
 ```
 
 We are defining a variable `pid` of the type pid_t. This variable saves the `fork()` result, and using it we activate one (“I am the child.”) or the other (“I am the parent”) branch of an if().

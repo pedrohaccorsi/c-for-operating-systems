@@ -18,16 +18,27 @@ In code:
 
 ```c
 #include <unistd.h>
- 
+
 int main(void) {
   char *binaryPath = "/bin/ls";
   char *arg1 = "-lh";
-  char *arg2 = "/home";
- 
+  char *arg2 = "/home/pedro/Desktop/superprof/guilherme";
+
   execl(binaryPath, binaryPath, arg1, arg2, NULL);
- 
+
   return 0;
 }
 ```
-If everything runs smoothly, the system should completely change the current process by the binaryPath sent to `execl()`. In other words, the `return 0` statement would never be reached.
+
+Running this, we get:
+
+```
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/exec$ gcc ex01.c -o ex01
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-01/exec$ ./ex01
+total 12K
+drwxrwxr-x 2 pedro pedro 4,0K mar 24 23:37 aula-00
+drwxrwxr-x 5 pedro pedro 4,0K mar 26 14:38 aula-01
+drwxrwxr-x 3 pedro pedro 4,0K mar 26 14:31 aula-02
+```
+
  
