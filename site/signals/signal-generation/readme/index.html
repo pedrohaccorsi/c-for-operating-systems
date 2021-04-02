@@ -9,19 +9,19 @@
       
       
       
-      <link rel="shortcut icon" href="../../c.svg">
+      <link rel="shortcut icon" href="../../../c.svg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
     
     
       
-        <title>Signals - C for Operating Systems</title>
+        <title>Generating signals - C for Operating Systems</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.77f3fd56.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.7fa14f5b.min.css">
         
       
     
@@ -36,7 +36,7 @@
     
     
     
-      <link rel="stylesheet" href="../../stylesheets/custom-colors.css">
+      <link rel="stylesheet" href="../../../stylesheets/custom-colors.css">
     
     
       
@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#generating-signals-via-shell" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -70,7 +75,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="C for Operating Systems" class="md-header__button md-logo" aria-label="C for Operating Systems">
+    <a href="../../.." title="C for Operating Systems" class="md-header__button md-logo" aria-label="C for Operating Systems">
       
   
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Signals
+              Generating signals
             
           </span>
         </div>
@@ -168,7 +173,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -180,7 +185,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../processes/readme/" class="md-tabs__link">
+    <a href="../../../processes/readme/" class="md-tabs__link">
       Processes
     </a>
   </li>
@@ -195,7 +200,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../sys-calls/01-fork/readme/" class="md-tabs__link">
+      <a href="../../../sys-calls/01-fork/readme/" class="md-tabs__link">
         System calls
       </a>
     </li>
@@ -209,11 +214,15 @@
   
 
 
-  <li class="md-tabs__item">
-    <a href="./" class="md-tabs__link md-tabs__link--active">
-      Signals
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../introduction/readme/" class="md-tabs__link md-tabs__link--active">
+        Signals
+      </a>
+    </li>
+  
 
       
     </ul>
@@ -238,7 +247,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="C for Operating Systems" class="md-nav__button md-logo" aria-label="C for Operating Systems">
+    <a href="../../.." title="C for Operating Systems" class="md-nav__button md-logo" aria-label="C for Operating Systems">
       
   
   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -277,7 +286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -292,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../processes/readme/" class="md-nav__link">
+      <a href="../../../processes/readme/" class="md-nav__link">
         Processes
       </a>
     </li>
@@ -328,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sys-calls/01-fork/readme/" class="md-nav__link">
+      <a href="../../../sys-calls/01-fork/readme/" class="md-nav__link">
         01. Fork
       </a>
     </li>
@@ -340,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sys-calls/02-exit/readme/" class="md-nav__link">
+      <a href="../../../sys-calls/02-exit/readme/" class="md-nav__link">
         02. Exit
       </a>
     </li>
@@ -352,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sys-calls/03-wait/readme/" class="md-nav__link">
+      <a href="../../../sys-calls/03-wait/readme/" class="md-nav__link">
         03. Wait
       </a>
     </li>
@@ -364,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sys-calls/04-exec/readme/" class="md-nav__link">
+      <a href="../../../sys-calls/04-exec/readme/" class="md-nav__link">
         04. Exec
       </a>
     </li>
@@ -386,15 +395,102 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Signals
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Signals" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Signals
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/readme/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Generating signals
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Signals
+        Generating signals
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generating-signals-via-shell" class="md-nav__link">
+    Generating signals via SHELL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-via-code" class="md-nav__link">
+    Generating via code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../signal-handling/readme/" class="md-nav__link">
+        Handling signals
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -406,19 +502,144 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generating-signals-via-shell" class="md-nav__link">
+    Generating signals via SHELL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-via-code" class="md-nav__link">
+    Generating via code
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/pedrohaccorsi/c-for-operating-systems/edit/master/docs/signals/readme.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/pedrohaccorsi/c-for-operating-systems/edit/master/docs/signals/signal-generation/readme.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Signals</h1>
+                  <h1>Generating signals</h1>
                 
-                
+                <h2 id="generating-signals-via-shell">Generating signals via SHELL<a class="headerlink" href="#generating-signals-via-shell" title="Permanent link">#</a></h2>
+<p>We can send signals to a process via shell with the command <code>kill</code> . This command can send a given process any signal. For example, let's send the signal <code>SIGUSR1</code> to the process with <code>pid</code> 1234:</p>
+<div class="highlight"><pre><span></span><code>$ <span class="nb">kill</span> -USR1 <span class="m">1234</span>
+</code></pre></div>
+
+<p>Besides using kill to send signals to a process of our choose, we can also use some special key bindings to send signals to the foreground process we are executing. Some usual signals handled by default are:</p>
+<table>
+<thead>
+<tr>
+<th>key binding</th>
+<th>signal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ctrl + C</td>
+<td>SIGINT</td>
+</tr>
+<tr>
+<td>Ctrl + \</td>
+<td>SIGQUIT</td>
+</tr>
+<tr>
+<td>Ctrl + Z</td>
+<td>SIGTSTP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generating-via-code">Generating via code<a class="headerlink" href="#generating-via-code" title="Permanent link">#</a></h2>
+<p>An easy way to send signals via code is with the function <code>kill()</code> defined in <code>&lt;signal.h&gt;</code></p>
+<div class="highlight"><pre><span></span><code>int kill(pid_t pid, int sig);
+</code></pre></div>
+
+<p>This function will send the signal <code>sig</code> to the process with process id <code>pid</code>, and return an int to let the caller know what happened:</p>
+<ul>
+<li><code>0</code> means at least one signal was sent</li>
+<li><code>-1</code> means error, and <code>errno</code> is set to indicate the error.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;signal.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/wait.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+
+    <span class="kt">pid_t</span> <span class="n">fork_pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+    <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="n">fork_pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="k">for</span><span class="p">(;;);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">fork_pid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+        <span class="n">kill</span><span class="p">(</span><span class="n">fork_pid</span><span class="p">,</span> <span class="n">SIGTERM</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">status</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Child process was terminated successfuly!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Running this, we get:</p>
+<div class="highlight"><pre><span></span><code>pedro@ubuntu:~/Desktop/superprof/guilherme/aula-02/signal-handling$ gcc signal-example.c -o signal-example 
+pedro@ubuntu:~/Desktop/superprof/guilherme/aula-02/signal-handling$ ./signal-example
+Child process was terminated successfuly!
+</code></pre></div>
+
+<p>The code above will create a child process that will be stuck inside an infinite loop:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span> <span class="n">fork_pid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="k">for</span><span class="p">(;;);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>But not for too long, since the parent process will send a <code>SIGTERM</code> signal to the child, making it terminate immediately:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">fork_pid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="n">kill</span><span class="p">(</span><span class="n">fork_pid</span><span class="p">,</span> <span class="n">SIGTERM</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>And we can make sure that it works because we actually tell the parent signal to <code>wait</code> for the child. This means that if we didn't kill the child, the parent process would never reach the <code>printf()</code> line.</p>
+<div class="highlight"><pre><span></span><code><span class="n">wait</span><span class="p">();</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&quot;Child process was terminated successfuly!&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<p>As it does, we can tell that the killing worked as expected.</p>
                 
               
               
@@ -436,7 +657,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
-        <a href="../../sys-calls/04-exec/readme/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../introduction/readme/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -445,11 +666,25 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              04. Exec
+              Introduction
             </div>
           </div>
         </a>
       
+      
+        <a href="../../signal-handling/readme/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Handling signals
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
@@ -485,10 +720,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["tabs", "instant", "navigation.instant", "navigation.tabs", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs", "instant", "navigation.instant", "navigation.tabs", "search.highlight"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5cf3e710.min.js"></script>
       
     
   </body>

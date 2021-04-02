@@ -6,11 +6,15 @@ nav:
   - Home: index.md
   - Processes: processes/readme.md
   - System calls: 
-      - 01. Fork: sys-calls/01-fork/readme.md 
-      - 02. Exit: sys-calls/02-exit/readme.md 
-      - 03. Wait: sys-calls/03-wait/readme.md 
-      - 04. Exec: sys-calls/04-exec/readme.md  
-  - Signals: signals/readme.md
+    - 01. Fork: sys-calls/01-fork/readme.md 
+    - 02. Exit: sys-calls/02-exit/readme.md 
+    - 03. Wait: sys-calls/03-wait/readme.md 
+    - 04. Exec: sys-calls/04-exec/readme.md  
+  - Signals: 
+    - Introduction: signals/introduction/readme.md
+    - Generating signals: signals/signal-generation/readme.md
+    - Handling signals: signals/signal-handling/readme.md
+  
   
 repo_url: https://github.com/pedrohaccorsi/c-for-operating-systems
 repo_name: c-for-operating-systems
